@@ -399,7 +399,6 @@
       "model_eur": 0.0,
       "pages": 0.0,
       "quarantined_source_days": 0.0,
-      "range": {},
       "wrong_share": 0.065
     },
     "model_every_item": {
@@ -410,7 +409,6 @@
       "model_eur": 21.60000000000495,
       "pages": 0.0,
       "quarantined_source_days": 0.0,
-      "range": {},
       "wrong_share": 0.012388888888888889
     },
     "self_checking": {
@@ -421,7 +419,6 @@
       "model_eur": 1.0400000000000005,
       "pages": 1.0,
       "quarantined_source_days": 1.0,
-      "range": {},
       "wrong_share": 0.0
     }
   },
@@ -430,21 +427,18 @@
       "hit_at_5": 0.6641666666666667,
       "over_budget_shown": 0.3492777777777778,
       "queries": 1200.0,
-      "range": {},
       "stale_price_shown": 0.0
     },
     "keywords_weekly_prices": {
       "hit_at_5": 0.6641666666666667,
       "over_budget_shown": 0.3492777777777778,
       "queries": 1200.0,
-      "range": {},
       "stale_price_shown": 0.20305555555555554
     },
     "understood_live_prices": {
       "hit_at_5": 0.7961111111111111,
       "over_budget_shown": 0.0,
       "queries": 1200.0,
-      "range": {},
       "stale_price_shown": 0.0
     }
   },
