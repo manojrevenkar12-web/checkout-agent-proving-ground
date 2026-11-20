@@ -1,0 +1,64 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-24.04
+    services:
+      postgres:
+        image: postgres:16
+        env: {POSTGRES_PASSWORD: cap, POSTGRES_DB: cap}
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      CAP_TEST_DATABASE_URL: postgresql+psycopg://postgres:cap@localhost:5432/cap
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: {python-version: "3.13", cache: pip}
+      - run: pip install -r requirements-dev.txt
+      - run: ruff check .
+      - name: world, pilots and guards, ledger (SQLite and PostgreSQL), ingestion, search, service, reports
+        run: python -m pytest -q
+      - name: the development worlds evaluated again give the committed report
+        run: |
+          python -m cap.eval.cli evaluate
+          git diff --exit-code reports/dev.json reports/charts README.md
+      - name: both gates pass; the held-out worlds ran once and are locked
+        run: |
+          python -m cap.eval.cli gate && python -m cap.eval.cli gate --heldout && python -m cap.eval.cli readme --check
+          test -f config/heldout.lock && ! python -m cap.eval.cli heldout
+
+  web:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: {python-version: "3.13", cache: pip}
+      - run: pip install -r ../requirements.txt
+      - uses: pnpm/action-setup@v4
+        with: {package_json_file: web/package.json}
+      - uses: actions/setup-node@v5
+        with: {node-version: 22, cache: pnpm, cache-dependency-path: web/pnpm-lock.yaml}
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm build
+      - name: dashboard end to end against the service, with axe
+        run: pnpm e2e
+
+  image:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - run: docker build -t checkout-agent-proving-ground:ci .
+      - name: the image answers
+        run: |
+          docker run -d -p 8080:8080 --name cap checkout-agent-proving-ground:ci
+          for i in $(seq 1 30); do curl -fs localhost:8080/health && exit 0; sleep 1; done
+          docker logs cap; exit 1

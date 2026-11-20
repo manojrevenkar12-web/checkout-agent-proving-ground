@@ -1,0 +1,73 @@
+# Everything the platform decides with. The world never reads this file.
+
+# The computer-use model, as measured on our own checkout traces. It reads the accessibility tree and proposes
+# actions; code checks what it proposes before anything irreversible.
+model:
+  latency_ms: 3500
+  eur_per_step: 0.012
+  error_known: 0.02        # picks the wrong control although it knows the label
+  error_unknown: 0.35      # picks the wrong control for a label it has not seen
+  misread_addon: 0.30      # overlooks a pre-checked paid add-on
+  misread_budget: 0.35     # does not compare the total with the budget
+  misread_variant: 0.08    # leaves the size the page started with
+  lexicon:
+    add_to_cart: [add to cart, add to bag, add to basket, buy it, put in cart]
+    checkout: [checkout, proceed to checkout, go to checkout, continue to checkout, secure checkout]
+    continue: [continue, next, save and continue, next step, proceed]
+    to_review: [review order, continue to review, check your order, "next: review"]
+    place_order: [place order, buy now, complete purchase, pay now, confirm and pay, order with obligation to pay]
+    decline_popup: [no thanks, maybe later, close, not now, skip]
+    accept_popup: [subscribe, sign me up, "yes, send me deals", join now]
+    reject_cookies: [reject all, only necessary, decline, necessary cookies only]
+    accept_cookies: [accept all, allow all, i agree, ok]
+    retry: [try again]
+  fields:
+    quantity: [quantity, qty, amount]
+    name: [full name, name, recipient]
+    street: [street, address line 1, street and number]
+    postcode: [postcode, zip, postal code]
+    city: [city, town]
+
+agent:
+  think_ms: [900, 1700]    # paced like a person; the baselines act as fast as they can
+  fast_think_ms: 500
+  max_steps: 40
+  max_attempts: 3          # sessions per intent per day
+  session_budget_start: 8  # sessions per retailer per hour the platform allows itself at first
+  session_budget_floor: 2
+  session_budget_ceiling: 20
+
+guards:
+  total_labels: [total, order total, amount due, grand total]
+  item_prefix: "Item:"
+  addon_prefix: "Add-on:"
+  stock_out_words: [no longer available, out of stock, sold out]
+
+breaker:
+  window: 10
+  min_success: 0.4
+  cooldown_hours: 2
+
+economics:
+  commission: 0.04               # of a correct order's total
+  wrong_order_eur: 25.0          # support, return shipping, refund handling
+  duplicate_order_eur: 25.0
+  handoff_eur: 0.5               # a hand-off message and a lost moment of convenience
+  page_eur: 40.0                 # one on-call page
+
+ingest:
+  sample: 25
+  min_pass_rate: 0.97
+  max_price_jump: 0.5            # a price moving more than this against yesterday is held, not published
+  mapping_eur: 0.06              # one model call to propose a mapping from a sample
+  model_item_eur: 0.0009         # model reads every item (baseline)
+  model_item_error: 0.012
+
+designs:
+  scripted: {pilot: script, guards: false, ledger: false, pacing: true, budget: false, breaker: false}
+  model_only: {pilot: model, guards: false, ledger: false, pacing: false, budget: false, breaker: false}
+  platform: {pilot: recipes, guards: true, ledger: true, pacing: true, budget: true, breaker: true}
+  platform_no_guards: {pilot: recipes, guards: false, ledger: true, pacing: true, budget: true, breaker: true}
+  platform_no_ledger: {pilot: recipes, guards: true, ledger: false, pacing: true, budget: true, breaker: true}
+  platform_no_pacing: {pilot: recipes, guards: true, ledger: true, pacing: false, budget: false, breaker: true}
+  platform_no_recipes: {pilot: model, guards: true, ledger: true, pacing: true, budget: true, breaker: true}

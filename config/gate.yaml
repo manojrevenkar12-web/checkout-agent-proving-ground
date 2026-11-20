@@ -1,0 +1,9 @@
+# Release gate, set on the development worlds; the held-out worlds are checked once against the same numbers.
+min_correct_share: 0.95
+max_wrong_per_1000: 1.0
+max_duplicate_per_1000: 1.0
+max_silent_per_1000: 1.0
+min_rightly_not_bought: 0.98
+max_model_eur_per_correct: 0.01
+max_wrong_price_share: 0.002
+max_over_budget_shown: 0.0

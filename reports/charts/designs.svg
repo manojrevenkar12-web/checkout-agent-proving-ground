@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 294" width="760" height="294" font-family="Inter, Segoe UI, sans-serif">
+<rect width="760" height="294" fill="#fcfcfb"/>
+<text x="20" y="28" font-size="15" font-weight="600" fill="#1b1f24">Orders placed exactly right, by design</text>
+<text x="20" y="47" font-size="12" fill="#5b626b">Same worlds, same shoppers, same retailer changes and defences</text>
+<text x="290" y="79" font-size="12" text-anchor="end" fill="#1b1f24">Proving-ground platform</text>
+<rect x="300" y="68" width="378.5" height="16" rx="3" fill="#2a78d6"/>
+<text x="684.5" y="80" font-size="11" font-weight="600" fill="#1b1f24">97.1%</text>
+<text x="290" y="109" font-size="12" text-anchor="end" fill="#1b1f24">Computer-use model alone</text>
+<rect x="300" y="98" width="275.4" height="16" rx="3" fill="#1baf7a"/>
+<text x="581.4" y="110" font-size="11" font-weight="600" fill="#1b1f24">70.6%</text>
+<text x="290" y="139" font-size="12" text-anchor="end" fill="#1b1f24">Scripts recorded on day 0</text>
+<rect x="300" y="128" width="206.5" height="16" rx="3" fill="#eb6834"/>
+<text x="512.5" y="140" font-size="11" font-weight="600" fill="#1b1f24">53.0%</text>
+<text x="290" y="169" font-size="12" text-anchor="end" fill="#1b1f24">Platform without code guards</text>
+<rect x="300" y="158" width="320.4" height="16" rx="3" fill="#a3a9a6"/>
+<text x="626.4" y="170" font-size="11" font-weight="600" fill="#1b1f24">82.2%</text>
+<text x="290" y="199" font-size="12" text-anchor="end" fill="#1b1f24">Platform without the order ledger</text>
+<rect x="300" y="188" width="370.2" height="16" rx="3" fill="#a3a9a6"/>
+<text x="676.2" y="200" font-size="11" font-weight="600" fill="#1b1f24">94.9%</text>
+<text x="290" y="229" font-size="12" text-anchor="end" fill="#1b1f24">Platform without recipes (model every step)</text>
+<rect x="300" y="218" width="376.5" height="16" rx="3" fill="#a3a9a6"/>
+<text x="682.5" y="230" font-size="11" font-weight="600" fill="#1b1f24">96.5%</text>
+<text x="290" y="259" font-size="12" text-anchor="end" fill="#1b1f24">Platform without pacing or session budgets</text>
+<rect x="300" y="248" width="3.7" height="16" rx="3" fill="#a3a9a6"/>
+<text x="309.7" y="260" font-size="11" font-weight="600" fill="#1b1f24">0.9%</text>
+</svg>

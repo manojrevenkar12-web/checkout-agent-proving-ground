@@ -1,0 +1,474 @@
+{
+  "by_day": {
+    "model_only": [
+      0.7455538714159403,
+      0.7224013257921303,
+      0.7428573533745947,
+      0.7242756796205072,
+      0.736821139694703,
+      0.7083822903363134,
+      0.7107349632062276,
+      0.7319774372073221,
+      0.7159578544061301,
+      0.743099799306696,
+      0.735939866859407,
+      0.7068497232865047,
+      0.7222305493569862,
+      0.706042084777717,
+      0.7144444444444445,
+      0.7288527032779907,
+      0.6924390318068477,
+      0.6685655340827755,
+      0.6536608283160007,
+      0.6477522349936143
+    ],
+    "platform": [
+      0.982699886320576,
+      0.9779216079790791,
+      0.9861193212917351,
+      0.9672742200328408,
+      0.9908699750653774,
+      0.9635249042145594,
+      0.9796168582375478,
+      0.9780648300188529,
+      0.9677230432402847,
+      0.97550538222952,
+      0.9829389405826187,
+      0.9776217843459223,
+      0.9848199374061444,
+      0.9863902572523262,
+      0.9805692391899288,
+      0.972063492063492,
+      0.985249042145594,
+      0.9862220538082607,
+      0.97817673173995,
+      0.9698722860791825
+    ],
+    "scripted": [
+      0.9668706580775545,
+      0.8990996168582374,
+      0.8319144457075491,
+      0.8233552271483304,
+      0.7070513288329379,
+      0.6268965517241379,
+      0.5856510369154047,
+      0.5750519978106184,
+      0.5762041598248494,
+      0.5668956394818463,
+      0.5773481116584563,
+      0.5413753572948975,
+      0.5446904457823998,
+      0.5117077175697866,
+      0.4828981937602627,
+      0.4376600985221675,
+      0.41171866447728517,
+      0.4140819333922782,
+      0.3827388554400049,
+      0.34758347016967706
+    ]
+  },
+  "change_days": {
+    "model_only": {
+      "changed": 0.6475413169737883,
+      "changed_cells": 48,
+      "unchanged": 0.7186289461089561
+    },
+    "platform": {
+      "changed": 0.9804175789089582,
+      "changed_cells": 48,
+      "unchanged": 0.9785095471189926
+    },
+    "scripted": {
+      "changed": 0.2601960180623974,
+      "changed_cells": 48,
+      "unchanged": 0.6192652109537417
+    }
+  },
+  "checkout": {
+    "model_only": {
+      "challenges": 449.6666666666667,
+      "contribution_eur": 9524.850666666684,
+      "correct_share": 0.7125877740714701,
+      "duplicate_per_1000": 21.333333333333332,
+      "handoff_share": 0.0,
+      "intents": 6000.0,
+      "median_minutes": 0.8835437325478982,
+      "model_eur": 1117.724,
+      "model_eur_per_correct": 0.26967433086223985,
+      "model_repairs": 0.0,
+      "newsletter_signups": 23.333333333333332,
+      "outcomes": {
+        "correct": 12461,
+        "declined": 161,
+        "duplicate": 384,
+        "missed": 140,
+        "rightly_not_bought": 481,
+        "wrong": 1742,
+        "wrongly_refused": 2631
+      },
+      "pages": 0.0,
+      "possible": 5828.666666666667,
+      "range": {
+        "correct_share": [
+          0.6858665749656121,
+          0.7487583490323686
+        ],
+        "wrong_per_1000": [
+          84.0,
+          113.5
+        ]
+      },
+      "recipe_replays": 0.0,
+      "rightly_not_bought_share": 0.9346570374998469,
+      "silent_per_1000": 1.1111111111111112,
+      "wrong_per_1000": 96.77777777777777
+    },
+    "platform": {
+      "challenges": 427.3333333333333,
+      "contribution_eur": 37699.3714666667,
+      "correct_share": 0.9786671822695211,
+      "duplicate_per_1000": 0.0,
+      "handoff_share": 0.0,
+      "intents": 6000.0,
+      "median_minutes": 0.4382089054833045,
+      "model_eur": 1.9320000000000002,
+      "model_eur_per_correct": 0.0003386770393238874,
+      "model_repairs": 77.0,
+      "newsletter_signups": 0.0,
+      "outcomes": {
+        "correct": 17113,
+        "declined": 200,
+        "missed": 173,
+        "rightly_not_bought": 514
+      },
+      "pages": 30.333333333333332,
+      "possible": 5828.666666666667,
+      "range": {
+        "correct_share": [
+          0.9776478679504814,
+          0.979962322315465
+        ],
+        "wrong_per_1000": [
+          0.0,
+          0.0
+        ]
+      },
+      "recipe_replays": 36518.666666666664,
+      "rightly_not_bought_share": 1.0,
+      "silent_per_1000": 0.0,
+      "wrong_per_1000": 0.0
+    },
+    "platform_no_guards": {
+      "challenges": 432.6666666666667,
+      "contribution_eur": 8929.493466666696,
+      "correct_share": 0.8262805312872675,
+      "duplicate_per_1000": 0.0,
+      "handoff_share": 0.0,
+      "intents": 6000.0,
+      "median_minutes": 0.4341762460832956,
+      "model_eur": 159.28,
+      "model_eur_per_correct": 0.03338951002479019,
+      "model_repairs": 13173.666666666666,
+      "newsletter_signups": 192.33333333333334,
+      "outcomes": {
+        "correct": 14448,
+        "declined": 199,
+        "missed": 176,
+        "rightly_not_bought": 421,
+        "wrong": 2730,
+        "wrongly_refused": 26
+      },
+      "pages": 30.666666666666668,
+      "possible": 5828.666666666667,
+      "range": {
+        "correct_share": [
+          0.7209741039272852,
+          0.8801164582976537
+        ],
+        "wrong_per_1000": [
+          99.16666666666667,
+          253.16666666666666
+        ]
+      },
+      "recipe_replays": 37755.0,
+      "rightly_not_bought_share": 0.8172755338307178,
+      "silent_per_1000": 0.0,
+      "wrong_per_1000": 151.66666666666666
+    },
+    "platform_no_ledger": {
+      "challenges": 427.3333333333333,
+      "contribution_eur": 32647.9582666667,
+      "correct_share": 0.9515617182605766,
+      "duplicate_per_1000": 26.333333333333332,
+      "handoff_share": 0.0,
+      "intents": 6000.0,
+      "median_minutes": 0.4374240614097565,
+      "model_eur": 3.776,
+      "model_eur_per_correct": 0.0006808211015085776,
+      "model_repairs": 238.0,
+      "newsletter_signups": 0.0,
+      "outcomes": {
+        "correct": 16639,
+        "declined": 200,
+        "duplicate": 474,
+        "missed": 173,
+        "rightly_not_bought": 514
+      },
+      "pages": 30.333333333333332,
+      "possible": 5828.666666666667,
+      "range": {
+        "correct_share": [
+          0.9494776502825827,
+          0.9542102555307838
+        ],
+        "wrong_per_1000": [
+          0.0,
+          0.0
+        ]
+      },
+      "recipe_replays": 36684.666666666664,
+      "rightly_not_bought_share": 1.0,
+      "silent_per_1000": 0.2222222222222222,
+      "wrong_per_1000": 0.0
+    },
+    "platform_no_pacing": {
+      "challenges": 4537.0,
+      "contribution_eur": -36947.49853333334,
+      "correct_share": 0.13979468285223154,
+      "duplicate_per_1000": 0.0,
+      "handoff_share": 0.381,
+      "intents": 6000.0,
+      "median_minutes": 40.29285068522919,
+      "model_eur": 1.836,
+      "model_eur_per_correct": 0.010751189649552908,
+      "model_repairs": 74.33333333333333,
+      "newsletter_signups": 0.0,
+      "outcomes": {
+        "correct": 2444,
+        "declined": 23,
+        "handoff": 6858,
+        "missed": 8161,
+        "rightly_not_bought": 514
+      },
+      "pages": 1033.3333333333333,
+      "possible": 5828.666666666667,
+      "range": {
+        "correct_share": [
+          0.011661807580174927,
+          0.20392022008253094
+        ],
+        "wrong_per_1000": [
+          0.0,
+          0.0
+        ]
+      },
+      "recipe_replays": 12593.666666666666,
+      "rightly_not_bought_share": 1.0,
+      "silent_per_1000": 0.0,
+      "wrong_per_1000": 0.0
+    },
+    "platform_no_recipes": {
+      "challenges": 436.3333333333333,
+      "contribution_eur": 36561.99560000003,
+      "correct_share": 0.9730655402429292,
+      "duplicate_per_1000": 0.0,
+      "handoff_share": 0.0001111111111111111,
+      "intents": 6000.0,
+      "median_minutes": 0.909596481190274,
+      "model_eur": 927.6640000000001,
+      "model_eur_per_correct": 0.16356334825719443,
+      "model_repairs": 0.0,
+      "newsletter_signups": 26.333333333333332,
+      "outcomes": {
+        "correct": 17015,
+        "declined": 198,
+        "handoff": 2,
+        "missed": 271,
+        "rightly_not_bought": 514
+      },
+      "pages": 30.333333333333332,
+      "possible": 5828.666666666667,
+      "range": {
+        "correct_share": [
+          0.9698164980277826,
+          0.9752407152682255
+        ],
+        "wrong_per_1000": [
+          0.0,
+          0.0
+        ]
+      },
+      "recipe_replays": 0.0,
+      "rightly_not_bought_share": 1.0,
+      "silent_per_1000": 0.0,
+      "wrong_per_1000": 0.0
+    },
+    "scripted": {
+      "challenges": 446.0,
+      "contribution_eur": 19811.208133333348,
+      "correct_share": 0.5906513839483496,
+      "duplicate_per_1000": 15.444444444444445,
+      "handoff_share": 0.0,
+      "intents": 6000.0,
+      "median_minutes": 0.4369657482702331,
+      "model_eur": 0.0,
+      "model_eur_per_correct": 0.0,
+      "model_repairs": 0.0,
+      "newsletter_signups": 0.0,
+      "outcomes": {
+        "correct": 10329,
+        "declined": 128,
+        "duplicate": 278,
+        "missed": 6611,
+        "rightly_not_bought": 452,
+        "wrong": 202
+      },
+      "pages": 0.0,
+      "possible": 5828.666666666667,
+      "range": {
+        "correct_share": [
+          0.5438175270108043,
+          0.6590169549580408
+        ],
+        "wrong_per_1000": [
+          2.3333333333333335,
+          26.333333333333332
+        ]
+      },
+      "recipe_replays": 0.0,
+      "rightly_not_bought_share": 0.8772464993200778,
+      "silent_per_1000": 1.3888888888888886,
+      "wrong_per_1000": 11.222222222222221
+    }
+  },
+  "comparisons": {
+    "platform - model_only": {
+      "ci": [
+        0.2594060963056159,
+        0.2729083266613291
+      ],
+      "mean": 0.2660414045522132,
+      "n": 17486
+    },
+    "platform - platform_no_guards": {
+      "ci": [
+        0.14725923596019674,
+        0.15772904037515725
+      ],
+      "mean": 0.1524076403980327,
+      "n": 17486
+    },
+    "platform - platform_no_ledger": {
+      "ci": [
+        0.024705478668649205,
+        0.029680887567196616
+      ],
+      "mean": 0.027107400205878988,
+      "n": 17486
+    },
+    "platform - platform_no_pacing": {
+      "ci": [
+        0.8335211025963628,
+        0.8439322886880933
+      ],
+      "mean": 0.8388996911815166,
+      "n": 17486
+    },
+    "platform - platform_no_recipes": {
+      "ci": [
+        0.004516470319112433,
+        0.006748255747455107
+      ],
+      "mean": 0.005604483586869495,
+      "n": 17486
+    },
+    "platform - scripted": {
+      "ci": [
+        0.38098478783026424,
+        0.39529194784398947
+      ],
+      "mean": 0.38796751687063935,
+      "n": 17486
+    }
+  },
+  "ingestion": {
+    "handwritten": {
+      "feed_changes": 12.666666666666666,
+      "held_rows": 0.0,
+      "item_days": 24000.0,
+      "missing_share": 0.15,
+      "model_eur": 0.0,
+      "pages": 0.0,
+      "quarantined_source_days": 0.0,
+      "wrong_share": 0.049999999999999996
+    },
+    "model_every_item": {
+      "feed_changes": 12.666666666666666,
+      "held_rows": 0.0,
+      "item_days": 24000.0,
+      "missing_share": 0.0,
+      "model_eur": 21.60000000000495,
+      "pages": 0.0,
+      "quarantined_source_days": 0.0,
+      "wrong_share": 0.011750000000000002
+    },
+    "self_checking": {
+      "feed_changes": 12.666666666666666,
+      "held_rows": 0.0,
+      "item_days": 24000.0,
+      "missing_share": 0.0,
+      "model_eur": 1.0600000000000005,
+      "pages": 0.3333333333333333,
+      "quarantined_source_days": 0.3333333333333333,
+      "wrong_share": 0.00037499999999999995
+    }
+  },
+  "search": {
+    "keywords_live_prices": {
+      "hit_at_5": 0.6736111111111112,
+      "over_budget_shown": 0.33155555555555555,
+      "queries": 1200.0,
+      "stale_price_shown": 0.0
+    },
+    "keywords_weekly_prices": {
+      "hit_at_5": 0.6736111111111112,
+      "over_budget_shown": 0.33155555555555555,
+      "queries": 1200.0,
+      "stale_price_shown": 0.20305555555555554
+    },
+    "understood_live_prices": {
+      "hit_at_5": 0.7991666666666667,
+      "over_budget_shown": 0.0,
+      "queries": 1200.0,
+      "stale_price_shown": 0.0
+    }
+  },
+  "seeds": [
+    7201,
+    7202,
+    7203
+  ],
+  "worlds": [
+    {
+      "checkout_changes": 14,
+      "feed_changes": 15,
+      "intents": 6000,
+      "retailers": 10,
+      "seed": 7201
+    },
+    {
+      "checkout_changes": 12,
+      "feed_changes": 9,
+      "intents": 6000,
+      "retailers": 10,
+      "seed": 7202
+    },
+    {
+      "checkout_changes": 22,
+      "feed_changes": 14,
+      "intents": 6000,
+      "retailers": 10,
+      "seed": 7203
+    }
+  ]
+}

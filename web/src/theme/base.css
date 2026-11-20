@@ -1,0 +1,16 @@
+@import "@fontsource-variable/schibsted-grotesk/index.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-ground text-copy font-ui text-body;
+  }
+  h1, h2, h3 { @apply text-ink; letter-spacing: -0.015em; }
+  td:not(:first-child) { font-variant-numeric: tabular-nums; }
+  :focus-visible { outline: 2px solid theme("colors.focus"); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+}

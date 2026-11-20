@@ -1,0 +1,74 @@
+# The simulated open web. Only the world (cap/world) reads this file; the platform reads config/platform.yaml.
+seeds: [7101, 7102, 7103]
+days: 20
+retailers: 10
+products_per_retailer: 120
+intents_per_retailer_per_day: 30
+peak_share: 0.4                   # share of a retailer's daily intents that arrive in its busiest hour (a drop or a sale)
+hours_per_day: 16
+
+# What shoppers ask for.
+intents:
+  qty_two: 0.12
+  budget_slack: [0.05, 0.35]      # max total = price x qty x (1 + slack)
+  tight_budget: 0.12              # budget below what the retailer will charge after a price change
+
+# Each retailer's checkout, built from these words. The world changes them on drift days.
+vocabulary:
+  add_to_cart: ["Add to cart", "Add to bag", "Add to basket", "Buy it", "Put in cart"]
+  checkout: ["Checkout", "Proceed to checkout", "Go to checkout", "Continue to checkout", "Secure checkout"]
+  continue: ["Continue", "Next", "Save and continue", "Next step", "Proceed"]
+  to_review: ["Review order", "Continue to review", "Check your order", "Next: review"]
+  place_order: ["Place order", "Buy now", "Complete purchase", "Pay now", "Confirm and pay", "Order with obligation to pay"]
+  decline_popup: ["No thanks", "Maybe later", "Close", "Not now", "Skip"]
+  accept_popup: ["Subscribe", "Sign me up", "Yes, send me deals", "Join now"]
+  reject_cookies: ["Reject all", "Only necessary", "Decline", "Necessary cookies only"]
+  accept_cookies: ["Accept all", "Allow all", "I agree", "OK"]
+  variant: ["Size", "Choose size", "Select size", "Variant", "Option"]
+  quantity: ["Quantity", "Qty", "Amount"]
+  addon: ["Protection plan", "Extended warranty", "Gift wrap", "Express handling", "Carbon-neutral shipping"]
+  titles:
+    cart: ["Your cart", "Shopping bag", "Basket", "Your basket"]
+    shipping: ["Shipping", "Delivery address", "Where should we send it?", "Delivery"]
+    payment: ["Payment", "How would you like to pay?", "Payment method"]
+    review: ["Review your order", "Order summary", "Check and buy", "Last step"]
+  address_fields: [["Full name", "Street", "Postcode", "City"], ["Name", "Address line 1", "ZIP", "Town"], ["Recipient", "Street and number", "Postal code", "City"]]
+  rare_labels:   # labels a general model has seldom seen
+    add_to_cart: ["Grab it", "Take it home"]
+    place_order: ["Yes, I want it", "Seal the deal"]
+    continue: ["Onward", "Carry on"]
+
+drift:
+  per_day: 0.10                   # chance a retailer changes its checkout on a given day
+  ops_per_change: [1, 3]
+  ops: [relabel, new_ids, popup, cookie_banner, addon_moves, addon_default_on, variant_default_shift, split_address, rare_label]
+
+# How retailers defend themselves.
+defence:
+  min_ms_between_actions: [450, 900]
+  sessions_per_hour: [6, 14]
+  challenge_when_suspicious: 0.6   # chance a suspicious session gets a human check
+  block_after_challenges: 3        # challenges in an hour before the retailer blocks for the rest of it
+
+# What goes wrong at checkout.
+checkout:
+  price_change: [0.02, 0.08]       # chance the price rises between cart and review
+  price_rise: [0.06, 0.22]
+  stock_out_at_review: [0.01, 0.04]
+  ambiguous_payment: [0.01, 0.04]  # the order is placed, but the page says something went wrong
+  declined: [0.005, 0.02]
+  addon_trap: 0.5                  # retailers that pre-check a paid add-on
+  variant_trap: 0.4                # retailers whose size select does not start on the first option
+  page_ms: [300, 1200]
+
+# Product feeds the platform ingests.
+feeds:
+  formats: [jsonld, csv, html_table, embedded_json]
+  price_encodings: [decimal_dot, decimal_comma, cents, currency_prefix]
+  field_names:
+    title: [name, title, productName, product_title]
+    price: [price, amount, unitPrice, sale_price]
+    gtin: [gtin, ean, gtin13, barcode]
+    stock: [availability, inStock, stock_status, available]
+  change_per_day: 0.06             # chance a feed changes its format or field names on a given day
+  price_moves_per_day: 0.08        # chance a product's price changes on a given day
